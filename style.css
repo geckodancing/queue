@@ -1,0 +1,63 @@
+html *
+{
+   color: #000;
+   font-family: Arial !important;
+}
+
+body {
+    background-color: Gainsboro;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+#leftContent{
+	float:left; 
+	margin: 5px;
+	background-color:#f1f1f1;
+	padding:10px;
+    border: 1px solid light-blue;
+	width:45%;
+	border-radius: 25px;
+}
+
+#rightContent{
+	float:left; 
+	margin: 5px;
+	background-color:#f1f1f1;
+	padding:10px;
+	width:45%;
+	border-radius: 25px;
+}
+
+#queueTable{
+	display: table;
+	margin: 10px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+th { 
+	border-top: 1px solid #000; 
+	border-bottom: 1px solid #000;
+	text-align: left;
+}
+
+td { 
+	border-bottom: 1px solid #000; 
+}
+
+#citizenButton{
+	background-color: Blue;
+	color: white;
+}
+
+#organisationButton{
+	background-color: DodgerBlue;
+color: white;
+}
+
+#anonymousButton{
+	background-color: DodgerBlue;
+color: white;
+}
