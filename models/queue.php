@@ -37,14 +37,19 @@ class Queue
 	public static function add($type, $title, $firstname, $lastname, $service) 
 	{
 		$db = Db::getInstance();
-		$type = $type;
-		$title = $title; 
-		$firstname = $firstname; 
-		$lastname = $lastname; 
-		$service = $service;
+		/*
 		$req = $db->query("INSERT INTO queue (type, title, firstname, lastname, service)
 							VALUES ('".$type."', '".$title."', '".$firstname."', '".$lastname."', '".$service."')");
-
+*/
+		$statement = $db->prepare("INSERT INTO queue (type, title, firstname, lastname, service)
+									VALUES(:type, :title, :firstname, :lastname, :service)");
+		$statement->execute(array(
+									"type" => $type,
+									"title" => $title,
+									"firstname" => $firstname,
+									"lastname" => $lastname,
+									"service" => $service,
+								));
 		$message = "New record created successfully";
 		return $message;
 	}

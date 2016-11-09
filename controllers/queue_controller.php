@@ -6,11 +6,26 @@ class QueueController
 		if(isset($_POST['customerType']))
 		{
 			$type = $_POST['customerType'];
-			$title = $_POST['title']; 
-			$firstname = $_POST['firstname']; 
-			$lastname = $_POST['lastname']; 
+			$firstname = $_POST['firstname'];
 			$service = $_POST['service'];
-			$message = Queue::add($type, $title, $firstname, $lastname, $service);
+			switch ($type) 
+			{
+				case 'citizen':
+					$title = $_POST['title']; 			
+					$lastname = $_POST['lastname'];
+				break;
+				case 'organisation':
+					$firstname = $_POST['name'];
+					$title = "";
+					$lastname = "";
+				break;
+				default:
+					$firstname = "";
+					$title = "";
+					$lastname = "";
+			}
+
+			Queue::add($type, $title, $firstname, $lastname, $service);
 		}
 		$queueEntries = Queue::all();
 
